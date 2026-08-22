@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import { Mail, Menu, Phone, Search } from 'lucide-react'
-import { NAV_ITEMS } from '../../data/navigation'
-import { SITE } from '../../data/site'
-import { Button } from '../ui/Button'
-import { MobileMenu } from './MobileMenu'
-import { NavDropdown } from './NavDropdown'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Mail, Menu, Phone, Search } from "lucide-react";
+import { NAV_ITEMS } from "../../data/navigation";
+import { SITE } from "../../data/site";
+import { Button } from "../ui/Button";
+import { MobileMenu } from "./MobileMenu";
+import { NavDropdown } from "./NavDropdown";
 
 export function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
     <>
@@ -37,7 +38,7 @@ export function Header() {
         </div>
 
         <div className="ac-container flex h-[var(--header-h)] items-center justify-between gap-6">
-          <a className="shrink-0" aria-label="Ark Cyber — home" href="/">
+          <Link className="shrink-0" aria-label="Ark Cyber — home" to="/">
             <img
               alt={SITE.name}
               src={SITE.logo}
@@ -45,9 +46,12 @@ export function Header() {
               height={150}
               className="h-auto w-full max-w-[132px] transition-[max-width] duration-[var(--dur-3)] sm:max-w-[170px]"
             />
-          </a>
+          </Link>
 
-          <nav aria-label="Primary" className="hidden lg:flex items-center gap-8">
+          <nav
+            aria-label="Primary"
+            className="hidden lg:flex items-center gap-8"
+          >
             {NAV_ITEMS.map((item) =>
               item.children ? (
                 <NavDropdown
@@ -59,12 +63,12 @@ export function Header() {
                 />
               ) : (
                 <div key={item.label} className="flex h-full items-center">
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="flex items-center gap-1 py-8 font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-label)] font-medium uppercase tracking-[var(--tr-label)] text-[var(--ink-2)] transition-colors duration-[var(--dur-1)] hover:text-[var(--ink-1)]"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </div>
               ),
             )}
@@ -98,5 +102,5 @@ export function Header() {
 
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </>
-  )
+  );
 }
