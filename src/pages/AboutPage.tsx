@@ -1,8 +1,8 @@
-import { ABOUT_CTA_DESCRIPTION } from '../data/about'
-import { AboutContent } from '../components/sections/AboutContent'
-import { CtaSection } from '../components/sections/CtaSection'
-import { PageHero } from '../components/sections/PageHero'
-import { WhyChooseUs } from '../components/sections/WhyChooseUs'
+import { ABOUT_CTA_DESCRIPTION } from "../data/about";
+import { AboutContent } from "../components/sections/AboutContent";
+import { CtaSection } from "../components/sections/CtaSection";
+import { PageHero } from "../components/sections/PageHero";
+import { WhyChooseUs } from "../WhyChooseUs";
 
 export function AboutPage() {
   return (
@@ -16,5 +16,5 @@ export function AboutPage() {
       <WhyChooseUs />
       <CtaSection description={ABOUT_CTA_DESCRIPTION} />
     </div>
-  )
+  );
 }
