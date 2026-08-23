@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react'
+import { SearchProvider } from '../../context/SearchContext'
+import { SearchModal } from '../search/SearchModal'
 import { Footer } from './Footer'
 import { GoogleReviewsBadge } from './GoogleReviewsBadge'
 import { Header } from './Header'
@@ -10,7 +12,7 @@ interface SiteLayoutProps {
 
 export function SiteLayout({ children }: SiteLayoutProps) {
   return (
-    <>
+    <SearchProvider>
       <SkipLink />
       <Header />
       <main id="content" className="flex flex-1 flex-col">
@@ -18,6 +20,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
       </main>
       <Footer />
       <GoogleReviewsBadge />
-    </>
+      <SearchModal />
+    </SearchProvider>
   )
 }

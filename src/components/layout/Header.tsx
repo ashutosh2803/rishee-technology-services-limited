@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Mail, Menu, Phone, Search } from "lucide-react";
+import { useSearch } from "../../context/SearchContext";
 import { NAV_ITEMS } from "../../data/navigation";
 import { SITE } from "../../data/site";
 import { Button } from "../ui/Button";
@@ -10,6 +11,7 @@ import { NavDropdown } from "./NavDropdown";
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const { openSearch } = useSearch();
 
   return (
     <>
@@ -63,12 +65,16 @@ export function Header() {
                 />
               ) : (
                 <div key={item.label} className="flex h-full items-center">
-                  <Link
+                  <NavLink
                     to={item.href}
-                    className="flex items-center gap-1 py-8 font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-label)] font-medium uppercase tracking-[var(--tr-label)] text-[var(--ink-2)] transition-colors duration-[var(--dur-1)] hover:text-[var(--ink-1)]"
+                    className={({ isActive }) =>
+                      `flex items-center gap-1 py-8 font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-label)] font-medium uppercase tracking-[var(--tr-label)] transition-colors duration-[var(--dur-1)] hover:text-[var(--ink-1)] ${
+                        isActive ? "text-[var(--ink-1)]" : "text-[var(--ink-2)]"
+                      }`
+                    }
                   >
                     {item.label}
-                  </Link>
+                  </NavLink>
                 </div>
               ),
             )}
@@ -78,6 +84,7 @@ export function Header() {
             <button
               type="button"
               aria-label="Search"
+              onClick={openSearch}
               className="p-2 text-[var(--ink-2)] transition-colors hover:text-[var(--ink-1)]"
             >
               <Search className="size-5" aria-hidden />

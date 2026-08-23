@@ -1,4 +1,5 @@
 import { useEffect, useState, type CSSProperties } from 'react'
+import { Link } from 'react-router-dom'
 import { ChevronDown, X } from 'lucide-react'
 import { NAV_ITEMS } from '../../data/navigation'
 import { Button } from '../ui/Button'
@@ -57,15 +58,16 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                 style={{ '--i': index } as CSSProperties}
               >
                 <div className="flex items-stretch">
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
+                    onClick={onClose}
                     className="group flex flex-1 items-baseline gap-3 py-4 text-[length:var(--fs-h3)] font-semibold text-[var(--ink-1)] transition-colors hover:text-[var(--accent-hi)]"
                   >
                     {item.label}
                     <span className="font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-label)] tracking-[var(--tr-label)] text-[var(--accent)]">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                  </a>
+                  </Link>
                   {item.children && (
                     <button
                       type="button"
@@ -98,12 +100,13 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                       <ul className="mb-3 flex flex-col gap-0.5 border-l border-[var(--accent-line)] pl-5">
                         {item.children.map((child) => (
                           <li key={child.href}>
-                            <a
-                              href={child.href}
+                            <Link
+                              to={child.href}
+                              onClick={onClose}
                               className="block py-2 text-[length:var(--fs-sm)] font-medium text-[var(--ink-2)] transition-colors hover:text-[var(--accent-hi)]"
                             >
                               {child.label}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>

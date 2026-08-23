@@ -1,6 +1,8 @@
 import type { CSSProperties } from "react";
-import { WHY_CHOOSE_ITEMS } from "./data/about";
+import { Link } from "react-router-dom";
+import { WHY_CHOOSE_ITEMS, type WhyChooseItem } from "./data/about";
 import { IconBox } from "./components/ui/IconBox";
+import { LabelMono } from "./components/ui/LabelMono";
 
 const GRID_MARKS = [
   { x1: 120, y1: 180, stroke: "#e23b42" },
@@ -9,7 +11,23 @@ const GRID_MARKS = [
   { x1: 1020, y1: 520, stroke: "#e23b42" },
 ];
 
-export function WhyChooseUs() {
+interface WhyChooseCta {
+  href: string;
+  title: string;
+  label?: string;
+}
+
+interface WhyChooseUsProps {
+  title?: string;
+  items?: WhyChooseItem[];
+  cta?: WhyChooseCta;
+}
+
+export function WhyChooseUs({
+  title = "Why Choose Ark Cyber?",
+  items = WHY_CHOOSE_ITEMS,
+  cta,
+}: WhyChooseUsProps) {
   return (
     <section className="relative border-y border-[var(--line-soft)] bg-[var(--surface-1)] py-[var(--section-default)]">
       <svg
@@ -51,11 +69,11 @@ export function WhyChooseUs() {
 
       <div className="ac-container relative">
         <h2 className="ac-reveal text-center text-[length:var(--fs-h2)] font-semibold tracking-[var(--tr-h2)] text-[var(--ink-1)]">
-          Why Choose Ark Cyber?
+          {title}
         </h2>
 
         <div className="ac-reveal mt-12 grid gap-px overflow-hidden rounded-[var(--r-sm)] border border-[var(--line)] bg-[var(--line)] sm:grid-cols-2">
-          {WHY_CHOOSE_ITEMS.map((item, index) => (
+          {items.map((item, index) => (
             <article
               key={item.number}
               className="group relative bg-[var(--surface-2)] p-8 transition-colors duration-[var(--dur-2)] hover:bg-[color-mix(in_srgb,var(--accent)_4%,var(--surface-2))] md:p-10"
@@ -75,6 +93,32 @@ export function WhyChooseUs() {
               </p>
             </article>
           ))}
+
+          {cta && (
+            <article
+              className="group relative flex flex-col justify-between bg-[var(--surface-2)] p-8 transition-colors duration-[var(--dur-2)] hover:bg-[color-mix(in_srgb,var(--accent)_4%,var(--surface-2))] md:p-10"
+              style={{ "--i": items.length } as CSSProperties}
+            >
+              <div>
+                <LabelMono>{cta.label ?? "Next Step"}</LabelMono>
+                <h3 className="mt-6 text-[length:var(--fs-h3)] font-semibold text-[var(--ink-1)]">
+                  {cta.title}
+                </h3>
+              </div>
+              <Link
+                to={cta.href}
+                className="ac-underline mt-8 inline-flex w-fit items-center gap-2 text-[length:var(--fs-sm)] font-medium text-[var(--accent-hi)]"
+              >
+                Get Started
+                <span
+                  aria-hidden
+                  className="font-[family-name:var(--font-jetbrains)]"
+                >
+                  →
+                </span>
+              </Link>
+            </article>
+          )}
         </div>
       </div>
     </section>

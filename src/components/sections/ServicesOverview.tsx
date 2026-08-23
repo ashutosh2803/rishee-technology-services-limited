@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react'
+import { Link } from 'react-router-dom'
 import { SERVICE_CARDS } from '../../data/services'
 import { IconBox } from '../ui/IconBox'
 import { LabelMono } from '../ui/LabelMono'
@@ -32,12 +33,12 @@ export function ServicesOverview() {
                   </div>
 
                   <h3 className="mt-5 text-[length:var(--fs-h3)] font-semibold text-[var(--ink-1)]">
-                    <a
-                      href={service.href}
+                    <Link
+                      to={service.href}
                       className="after:absolute after:inset-0 focus-visible:outline-none"
                     >
                       {service.title}
-                    </a>
+                    </Link>
                   </h3>
 
                   <p className="mt-3 text-[length:var(--fs-sm)] leading-[var(--lh-body)] text-[var(--ink-2)]">
@@ -49,8 +50,8 @@ export function ServicesOverview() {
                       <li aria-hidden className="pt-5" />
                       {service.links.map((link) => (
                         <li key={link.href} className="border-t border-[var(--line-soft)]">
-                          <a
-                            href={link.href}
+                          <Link
+                            to={link.href}
                             className="relative z-10 flex items-center justify-between gap-3 py-2.5 text-[length:var(--fs-sm)] text-[var(--ink-2)] transition-colors hover:text-[var(--accent-hi)]"
                           >
                             {link.label}
@@ -60,7 +61,7 @@ export function ServicesOverview() {
                             >
                               →
                             </span>
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
