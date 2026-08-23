@@ -1,11 +1,11 @@
-import type { CSSProperties } from 'react'
-import { Mail, Phone } from 'lucide-react'
-import { SITE } from '../../data/site'
-import { Button } from '../ui/Button'
-import { LabelMono } from '../ui/LabelMono'
+import type { CSSProperties } from "react";
+import { Mail, Phone } from "lucide-react";
+import { SITE } from "../../data/site";
+import { Button } from "../ui/Button";
+import { LabelMono } from "../ui/LabelMono";
 
 interface CtaSectionProps {
-  description?: string
+  description?: string;
 }
 
 export function CtaSection({ description }: CtaSectionProps) {
@@ -14,29 +14,34 @@ export function CtaSection({ description }: CtaSectionProps) {
       className="relative overflow-hidden border-y border-[var(--line)]"
       style={
         {
-          '--ink-1': '#ffffff',
-          '--ink-2': 'rgba(255,255,255,0.86)',
-          '--ink-3': 'rgba(255,255,255,0.72)',
-          '--accent': '#ffffff',
-          '--accent-hi': '#ffffff',
-          '--accent-line': 'rgba(255,255,255,0.45)',
-          '--accent-dim': 'rgba(255,255,255,0.16)',
-          '--line': 'rgba(255,255,255,0.24)',
-          '--line-soft': 'rgba(255,255,255,0.16)',
-          '--line-strong': 'rgba(255,255,255,0.4)',
-          '--accent-fill': '#ffffff',
-          '--ink-on-accent': '#c1272e',
-          '--surface-1': 'transparent',
-          '--surface-2': 'rgba(255,255,255,0.08)',
-          '--surface-3': 'rgba(255,255,255,0.14)',
-          backgroundColor: '#cb2028',
+          "--ink-1": "#ffffff",
+          "--ink-2": "rgba(255,255,255,0.86)",
+          "--ink-3": "rgba(255,255,255,0.72)",
+          "--accent": "#ffffff",
+          "--accent-hi": "#ffffff",
+          "--accent-line": "rgba(255,255,255,0.45)",
+          "--accent-dim": "rgba(255,255,255,0.16)",
+          "--line": "rgba(255,255,255,0.24)",
+          "--line-soft": "rgba(255,255,255,0.16)",
+          "--line-strong": "rgba(255,255,255,0.4)",
+          "--accent-fill": "#ffffff",
+          "--ink-on-accent": "#c1272e",
+          "--surface-1": "transparent",
+          "--surface-2": "rgba(255,255,255,0.08)",
+          "--surface-3": "rgba(255,255,255,0.14)",
+          backgroundColor: "#cb2028",
         } as CSSProperties
       }
     >
-      <div className="ac-reveal relative" style={{ '--i': 0 } as CSSProperties}>
+      <div className="ac-reveal relative" style={{ "--i": 0 } as CSSProperties}>
         <svg aria-hidden className="absolute inset-0 h-full w-full opacity-30">
           <defs>
-            <pattern id="cta-dots" width="28" height="28" patternUnits="userSpaceOnUse">
+            <pattern
+              id="cta-dots"
+              width="28"
+              height="28"
+              patternUnits="userSpaceOnUse"
+            >
               <circle cx="1" cy="1" r="1" fill="var(--line)" />
             </pattern>
           </defs>
@@ -93,7 +98,10 @@ export function CtaSection({ description }: CtaSectionProps) {
                   className="group/c flex items-center gap-3 font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-sm)] text-[var(--ink-2)] transition-colors hover:text-[var(--ink-1)]"
                 >
                   <span className="flex size-8 shrink-0 items-center justify-center rounded-[var(--r-xs)] border border-[var(--accent-line)] bg-[var(--accent-dim)] transition-transform group-hover/c:scale-105">
-                    <Phone className="size-3.5 text-[var(--accent)]" aria-hidden />
+                    <Phone
+                      className="size-3.5 text-[var(--accent)]"
+                      aria-hidden
+                    />
                   </span>
                   {SITE.phone}
                 </a>
@@ -102,7 +110,10 @@ export function CtaSection({ description }: CtaSectionProps) {
                   className="group/c flex items-center gap-3 font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-sm)] text-[var(--ink-2)] transition-colors hover:text-[var(--ink-1)]"
                 >
                   <span className="flex size-8 shrink-0 items-center justify-center rounded-[var(--r-xs)] border border-[var(--accent-line)] bg-[var(--accent-dim)] transition-transform group-hover/c:scale-105">
-                    <Mail className="size-3.5 text-[var(--accent)]" aria-hidden />
+                    <Mail
+                      className="size-3.5 text-[var(--accent)]"
+                      aria-hidden
+                    />
                   </span>
                   {SITE.email}
                 </a>
@@ -112,5 +123,5 @@ export function CtaSection({ description }: CtaSectionProps) {
         </div>
       </div>
     </section>
-  )
+  );
 }

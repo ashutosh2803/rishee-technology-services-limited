@@ -1,9 +1,22 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root,
-[data-theme='dark'] {
-  --hero-mask: linear-gradient(to right, transparent 0%, transparent 26%, #00000080 42%, #000 62%),
-    linear-gradient(to bottom, transparent 0%, #000 16%, #000 82%, transparent 100%);
+[data-theme="dark"] {
+  --hero-mask:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 26%,
+      #00000080 42%,
+      #000 62%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 16%,
+      #000 82%,
+      transparent 100%
+    );
 
   --surface-base: #0b0c0d;
   --surface-1: #121415;
@@ -74,11 +87,11 @@
     1
   );
 
-  --font-archivo: 'Archivo', ui-sans-serif, system-ui, sans-serif;
-  --font-jetbrains: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+  --font-archivo: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-jetbrains: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
   --surface-base: #eceef0;
   --surface-1: #ffffff;
   --surface-2: #f5f6f8;
@@ -103,7 +116,7 @@ html {
   scroll-behavior: smooth;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   color-scheme: dark;
 }
 
@@ -254,7 +267,13 @@ body {
 
 .ac-marquee {
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
 }
 
 .ac-marquee-inner {
@@ -308,7 +327,12 @@ body {
 
 .rule-fade {
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--line-strong), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--line-strong),
+    transparent
+  );
 }
 
 .bg-surface-1 {
@@ -361,7 +385,7 @@ body {
 }
 
 .ac-cursor::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 2px;
   height: 0.92em;

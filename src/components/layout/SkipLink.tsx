@@ -3,5 +3,5 @@ export function SkipLink() {
     <a href="#content" className="sr-only">
       Skip to content
     </a>
-  )
+  );
 }

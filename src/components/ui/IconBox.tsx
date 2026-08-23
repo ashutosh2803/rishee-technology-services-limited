@@ -1,13 +1,18 @@
-import type { LucideIcon } from 'lucide-react'
+import type { LucideIcon } from "lucide-react";
 
 interface IconBoxProps {
-  icon: LucideIcon
-  size?: 'sm' | 'md'
-  className?: string
+  icon: LucideIcon;
+  size?: "sm" | "md";
+  className?: string;
 }
 
-export function IconBox({ icon: Icon, size = 'md', className = '' }: IconBoxProps) {
-  const sizeClass = size === 'sm' ? 'size-9 [&>svg]:size-4' : 'size-10 [&>svg]:size-5'
+export function IconBox({
+  icon: Icon,
+  size = "md",
+  className = "",
+}: IconBoxProps) {
+  const sizeClass =
+    size === "sm" ? "size-9 [&>svg]:size-4" : "size-10 [&>svg]:size-5";
 
   return (
     <span
@@ -15,5 +20,5 @@ export function IconBox({ icon: Icon, size = 'md', className = '' }: IconBoxProp
     >
       <Icon aria-hidden />
     </span>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import type { CSSProperties } from 'react'
-import { Clock, Mail, MapPin, Phone } from 'lucide-react'
-import { CONTACT_ADDRESS_LINE, CONTACT_NOTE } from '../../data/contact'
-import { SITE } from '../../data/site'
-import { ContactForm } from './ContactForm'
-import { LabelMono } from '../ui/LabelMono'
+import type { CSSProperties } from "react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { CONTACT_ADDRESS_LINE, CONTACT_NOTE } from "../../data/contact";
+import { SITE } from "../../data/site";
+import { ContactForm } from "./ContactForm";
+import { LabelMono } from "../ui/LabelMono";
 
 export function ContactSection() {
   return (
@@ -11,7 +11,12 @@ export function ContactSection() {
       <div aria-hidden className="absolute inset-0 overflow-hidden">
         <svg className="absolute inset-0 h-full w-full">
           <defs>
-            <pattern id="contact-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+            <pattern
+              id="contact-grid"
+              width="44"
+              height="44"
+              patternUnits="userSpaceOnUse"
+            >
               <path
                 d="M 44 0 L 0 0 0 44"
                 fill="none"
@@ -27,7 +32,12 @@ export function ContactSection() {
           </defs>
           <rect width="100%" height="100%" fill="url(#contact-grid)" />
           <rect width="100%" height="100%" fill="url(#contact-glow)" />
-          <g stroke="rgba(110,168,220,0.3)" strokeWidth="1" fill="none" opacity="0.55">
+          <g
+            stroke="rgba(110,168,220,0.3)"
+            strokeWidth="1"
+            fill="none"
+            opacity="0.55"
+          >
             <line x1="12%" y1="18%" x2="38%" y2="34%" />
             <line x1="38%" y1="34%" x2="62%" y2="24%" />
             <line x1="62%" y1="24%" x2="84%" y2="46%" />
@@ -57,7 +67,7 @@ export function ContactSection() {
 
       <div className="ac-container relative z-10 grid gap-12 py-[calc(var(--section-default)+var(--header-h))] pb-[var(--section-default)] sm:py-[calc(var(--section-default)+var(--header-h)+var(--header-utility-h))] lg:grid-cols-12 lg:items-start lg:gap-16">
         <div className="lg:col-span-5">
-          <div className="ac-enter" style={{ '--i': 0 } as CSSProperties}>
+          <div className="ac-enter" style={{ "--i": 0 } as CSSProperties}>
             <LabelMono>Ark Cyber</LabelMono>
             <h1
               className="mt-6 text-[length:var(--fs-display)] leading-[var(--lh-display)] font-semibold tracking-[var(--tr-display)] text-[var(--ink-1)]"
@@ -70,13 +80,20 @@ export function ContactSection() {
             </p>
           </div>
 
-          <ul className="ac-enter mt-10 space-y-5" style={{ '--i': 1 } as CSSProperties}>
+          <ul
+            className="ac-enter mt-10 space-y-5"
+            style={{ "--i": 1 } as CSSProperties}
+          >
             <ContactDetail
               icon={Mail}
               href={`mailto:${SITE.email}`}
               label={SITE.email}
             />
-            <ContactDetail icon={Phone} href={SITE.phoneHref} label={SITE.phone} />
+            <ContactDetail
+              icon={Phone}
+              href={SITE.phoneHref}
+              label={SITE.phone}
+            />
             <ContactDetail
               icon={MapPin}
               href={SITE.address.mapsUrl}
@@ -87,12 +104,15 @@ export function ContactSection() {
           </ul>
         </div>
 
-        <div className="ac-enter lg:col-span-6 lg:col-start-7" style={{ '--i': 2 } as CSSProperties}>
+        <div
+          className="ac-enter lg:col-span-6 lg:col-start-7"
+          style={{ "--i": 2 } as CSSProperties}
+        >
           <ContactForm />
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function ContactDetail({
@@ -101,10 +121,10 @@ function ContactDetail({
   href,
   external,
 }: {
-  icon: typeof Mail
-  label: string
-  href?: string
-  external?: boolean
+  icon: typeof Mail;
+  label: string;
+  href?: string;
+  external?: boolean;
 }) {
   const content = (
     <>
@@ -115,26 +135,22 @@ function ContactDetail({
         {label}
       </span>
     </>
-  )
+  );
 
   if (href) {
     return (
       <li>
         <a
           href={href}
-          target={external ? '_blank' : undefined}
-          rel={external ? 'noopener noreferrer' : undefined}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
           className="group flex gap-4"
         >
           {content}
         </a>
       </li>
-    )
+    );
   }
 
-  return (
-    <li className="group flex gap-4">
-      {content}
-    </li>
-  )
+  return <li className="group flex gap-4">{content}</li>;
 }

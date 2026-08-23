@@ -1,6 +1,6 @@
-import type { CSSProperties } from 'react'
-import { AI_SECURITY_SERVICES } from '../../data/aiSecurity'
-import { IconBox } from '../ui/IconBox'
+import type { CSSProperties } from "react";
+import { AI_SECURITY_SERVICES } from "../../data/aiSecurity";
+import { IconBox } from "../ui/IconBox";
 
 export function AiSecurityServices() {
   return (
@@ -11,7 +11,7 @@ export function AiSecurityServices() {
             <article
               key={service.number}
               className="group relative bg-[var(--surface-2)] p-8 transition-colors duration-[var(--dur-2)] hover:bg-[color-mix(in_srgb,var(--accent)_4%,var(--surface-2))] md:p-10"
-              style={{ '--i': index } as CSSProperties}
+              style={{ "--i": index } as CSSProperties}
             >
               <div className="flex items-start justify-between gap-4">
                 <IconBox icon={service.icon} />
@@ -30,5 +30,5 @@ export function AiSecurityServices() {
         </div>
       </div>
     </section>
-  )
+  );
 }

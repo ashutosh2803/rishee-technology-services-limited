@@ -1,13 +1,13 @@
-import { useState, type FormEvent } from 'react'
-import { Button } from '../ui/Button'
+import { useState, type FormEvent } from "react";
+import { Button } from "../ui/Button";
 
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setSubmitted(true)
-  }
+    event.preventDefault();
+    setSubmitted(true);
+  };
 
   return (
     <div className="contact-form-card relative rounded-[var(--r-sm)] border border-[var(--accent-line)] bg-[var(--surface-2)] p-6 shadow-[0_0_48px_-12px_rgba(226,59,66,0.25)] md:p-8">
@@ -15,40 +15,69 @@ export function ContactForm() {
 
       <form className="mt-6 space-y-5" onSubmit={handleSubmit} noValidate>
         <div className="grid gap-5 sm:grid-cols-2">
-          <FormField id="contact-name" label="Name" required autoComplete="name" />
-          <FormField id="contact-company" label="Company Name" autoComplete="organization" />
+          <FormField
+            id="contact-name"
+            label="Name"
+            required
+            autoComplete="name"
+          />
+          <FormField
+            id="contact-company"
+            label="Company Name"
+            autoComplete="organization"
+          />
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
-          <FormField id="contact-phone" label="Phone" type="tel" autoComplete="tel" />
-          <FormField id="contact-email" label="Email" type="email" required autoComplete="email" />
+          <FormField
+            id="contact-phone"
+            label="Phone"
+            type="tel"
+            autoComplete="tel"
+          />
+          <FormField
+            id="contact-email"
+            label="Email"
+            type="email"
+            required
+            autoComplete="email"
+          />
         </div>
 
-        <FormField id="contact-message" label="Message" required multiline rows={6} />
+        <FormField
+          id="contact-message"
+          label="Message"
+          required
+          multiline
+          rows={6}
+        />
 
         <div className="flex flex-wrap items-center gap-4 pt-1">
           <Button type="submit" size="lg">
             Get Started
           </Button>
           {submitted && (
-            <p className="text-[length:var(--fs-sm)] text-[var(--ink-2)]" role="status">
+            <p
+              className="text-[length:var(--fs-sm)] text-[var(--ink-2)]"
+              role="status"
+            >
               Thank you — we&apos;ll be in touch within one business day.
             </p>
           )}
         </div>
       </form>
     </div>
-  )
+  );
 }
 
 interface FormFieldProps {
-  id: string
-  label: string
-  required?: boolean
-  multiline?: boolean
-  rows?: number
-  type?: string
-  autoComplete?: string
+  id: string;
+  label: string;
+  required?: boolean;
+  multiline?: boolean;
+  rows?: number;
+  type?: string;
+  autoComplete?: string;
 }
 
 function FormField({
@@ -57,11 +86,11 @@ function FormField({
   required,
   multiline,
   rows = 4,
-  type = 'text',
+  type = "text",
   autoComplete,
 }: FormFieldProps) {
   const sharedClassName =
-    'ac-input w-full rounded-[var(--r-sm)] border border-[var(--line-strong)] bg-[var(--surface-1)] px-4 py-3 text-[length:var(--fs-base)] text-[var(--ink-1)] transition-[border-color,box-shadow] duration-[var(--dur-2)] placeholder:text-[var(--ink-3)] focus:border-[var(--accent-line)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-dim)]'
+    "ac-input w-full rounded-[var(--r-sm)] border border-[var(--line-strong)] bg-[var(--surface-1)] px-4 py-3 text-[length:var(--fs-base)] text-[var(--ink-1)] transition-[border-color,box-shadow] duration-[var(--dur-2)] placeholder:text-[var(--ink-3)] focus:border-[var(--accent-line)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-dim)]";
 
   return (
     <div className="flex flex-col gap-2">
@@ -92,5 +121,5 @@ function FormField({
         />
       )}
     </div>
-  )
+  );
 }

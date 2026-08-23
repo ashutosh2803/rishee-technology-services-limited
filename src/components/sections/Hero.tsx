@@ -1,14 +1,14 @@
-import { Play } from 'lucide-react'
-import type { CSSProperties } from 'react'
-import heroImage from '../../assets/hero.png'
-import { SITE } from '../../data/site'
-import { Button } from '../ui/Button'
-import { LabelMono } from '../ui/LabelMono'
+import { Play } from "lucide-react";
+import type { CSSProperties } from "react";
+import heroImage from "../../assets/hero.png";
+import { SITE } from "../../data/site";
+import { Button } from "../ui/Button";
+import { LabelMono } from "../ui/LabelMono";
 
 const HIGHLIGHTS = [
-  'Businesses of all sizes across Canada and the USA',
-  'Enquiries answered within 24 hours on business days',
-]
+  "Businesses of all sizes across Canada and the USA",
+  "Enquiries answered within 24 hours on business days",
+];
 
 export function Hero() {
   return (
@@ -16,7 +16,12 @@ export function Hero() {
       <div aria-hidden className="absolute inset-0 overflow-hidden">
         <svg className="absolute inset-0 h-full w-full opacity-40">
           <defs>
-            <pattern id="hero-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+            <pattern
+              id="hero-grid"
+              width="28"
+              height="28"
+              patternUnits="userSpaceOnUse"
+            >
               <circle cx="1" cy="1" r="1" fill="var(--line)" />
             </pattern>
           </defs>
@@ -27,7 +32,7 @@ export function Hero() {
 
       <div
         className="ac-enter pointer-events-none absolute inset-y-0 right-0 w-full lg:w-[62vw]"
-        style={{ '--i': 2 } as CSSProperties}
+        style={{ "--i": 2 } as CSSProperties}
       >
         <div className="relative h-full w-full">
           <div
@@ -37,15 +42,15 @@ export function Hero() {
           <div
             className="relative h-full min-h-[22rem] w-full overflow-hidden sm:min-h-[28rem] lg:absolute lg:inset-y-0 lg:min-h-0"
             style={{
-              maskImage: 'var(--hero-mask)',
-              WebkitMaskImage: 'var(--hero-mask)',
+              maskImage: "var(--hero-mask)",
+              WebkitMaskImage: "var(--hero-mask)",
             }}
           >
             <img
               alt="Secure cloud connecting protected infrastructure nodes across a network"
               src={heroImage}
               onError={(event) => {
-                event.currentTarget.src = SITE.heroImage
+                event.currentTarget.src = SITE.heroImage;
               }}
               className="absolute inset-0 h-full w-full object-cover object-center lg:object-left"
             />
@@ -64,11 +69,13 @@ export function Hero() {
 
       <div className="ac-container relative grid min-h-[inherit] items-center gap-12 pt-[calc(var(--section-hero)+var(--header-h))] pb-[var(--section-default)] sm:pt-[calc(var(--section-hero)+var(--header-h)+var(--header-utility-h))] lg:grid-cols-12">
         <div className="relative z-10 max-w-[52rem] lg:col-span-6">
-          <div className="ac-enter" style={{ '--i': 0 } as CSSProperties}>
-            <LabelMono>IT Security &amp; Support Services · London, Ontario</LabelMono>
+          <div className="ac-enter" style={{ "--i": 0 } as CSSProperties}>
+            <LabelMono>
+              IT Security &amp; Support Services · London, Ontario
+            </LabelMono>
           </div>
 
-          <div className="ac-enter" style={{ '--i': 1 } as CSSProperties}>
+          <div className="ac-enter" style={{ "--i": 1 } as CSSProperties}>
             <h1
               className="mt-6 text-[length:var(--fs-display)] leading-[var(--lh-display)] font-semibold tracking-[var(--tr-display)] text-[var(--ink-1)]"
               style={{ fontVariationSettings: "'wdth' var(--wdth-display)" }}
@@ -78,33 +85,40 @@ export function Hero() {
             </h1>
           </div>
 
-          <div className="ac-enter" style={{ '--i': 2 } as CSSProperties}>
+          <div className="ac-enter" style={{ "--i": 2 } as CSSProperties}>
             <p className="measure mt-6 text-[length:var(--fs-lg)] leading-[var(--lh-body)] text-[var(--ink-2)]">
-              Ark Cyber is an IT services and cyber security company in London, Ontario. We keep
-              businesses across Canada and the USA protected, supported, and running without drama.
+              Ark Cyber is an IT services and cyber security company in London,
+              Ontario. We keep businesses across Canada and the USA protected,
+              supported, and running without drama.
             </p>
           </div>
 
-          <div className="ac-enter" style={{ '--i': 3 } as CSSProperties}>
+          <div className="ac-enter" style={{ "--i": 3 } as CSSProperties}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Button href="/contact" size="lg">
                 Get Started
               </Button>
-              <a href="/it-managed-services" className="ac-btn ac-btn-outline-hero h-[3.25rem] px-7 text-[length:var(--fs-lg)]">
+              <a
+                href="/it-managed-services"
+                className="ac-btn ac-btn-outline-hero h-[3.25rem] px-7 text-[length:var(--fs-lg)]"
+              >
                 <Play className="size-3.5 fill-current" aria-hidden />
                 Explore services
               </a>
             </div>
           </div>
 
-          <div className="ac-enter" style={{ '--i': 4 } as CSSProperties}>
+          <div className="ac-enter" style={{ "--i": 4 } as CSSProperties}>
             <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-2">
               {HIGHLIGHTS.map((item) => (
                 <li
                   key={item}
                   className="label-mono flex items-center gap-2 normal-case tracking-[0.08em] text-[var(--ink-2)]"
                 >
-                  <span aria-hidden className="size-1.5 shrink-0 rounded-[1px] bg-[var(--accent)]" />
+                  <span
+                    aria-hidden
+                    className="size-1.5 shrink-0 rounded-[1px] bg-[var(--accent)]"
+                  />
                   {item}
                 </li>
               ))}
@@ -123,5 +137,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

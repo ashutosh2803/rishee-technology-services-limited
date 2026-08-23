@@ -1,30 +1,30 @@
-import { useEffect, useState, type CSSProperties } from 'react'
-import { Link } from 'react-router-dom'
-import { ChevronDown, X } from 'lucide-react'
-import { NAV_ITEMS } from '../../data/navigation'
-import { Button } from '../ui/Button'
+import { useEffect, useState, type CSSProperties } from "react";
+import { Link } from "react-router-dom";
+import { ChevronDown, X } from "lucide-react";
+import { NAV_ITEMS } from "../../data/navigation";
+import { Button } from "../ui/Button";
 
 interface MobileMenuProps {
-  open: boolean
-  onClose: () => void
+  open: boolean;
+  onClose: () => void;
 }
 
 export function MobileMenu({ open, onClose }: MobileMenuProps) {
-  const [expanded, setExpanded] = useState<string | null>(null)
+  const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
+    document.body.style.overflow = open ? "hidden" : "";
     return () => {
-      document.body.style.overflow = ''
-    }
-  }, [open])
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <>
       <div
         aria-hidden
         className={`fixed inset-0 z-[60] bg-[rgba(6,7,8,0.6)] backdrop-blur-sm transition-opacity duration-[var(--dur-3)] ${
-          open ? 'opacity-100' : 'pointer-events-none opacity-0'
+          open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         onClick={onClose}
       />
@@ -34,7 +34,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         aria-modal="true"
         aria-label="Menu"
         className={`fixed inset-y-0 right-0 z-[61] flex w-full max-w-[22rem] flex-col border-l border-[var(--line-strong)] frost backdrop-blur-xl backdrop-saturate-150 transition-transform duration-[var(--dur-4)] ease-[var(--curve-entrance)] ${
-          open ? 'translate-x-0' : 'translate-x-full'
+          open ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex items-center justify-between border-b border-[var(--line)] px-6 py-5">
@@ -55,7 +55,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               <li
                 key={item.label}
                 className="border-b border-[var(--line-soft)]"
-                style={{ '--i': index } as CSSProperties}
+                style={{ "--i": index } as CSSProperties}
               >
                 <div className="flex items-stretch">
                   <Link
@@ -65,7 +65,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                   >
                     {item.label}
                     <span className="font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-label)] tracking-[var(--tr-label)] text-[var(--accent)]">
-                      {String(index + 1).padStart(2, '0')}
+                      {String(index + 1).padStart(2, "0")}
                     </span>
                   </Link>
                   {item.children && (
@@ -80,7 +80,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                     >
                       <ChevronDown
                         className={`size-5 transition-transform duration-300 ${
-                          expanded === item.label ? 'rotate-180' : ''
+                          expanded === item.label ? "rotate-180" : ""
                         }`}
                         aria-hidden
                       />
@@ -92,8 +92,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                   <div
                     className={`grid transition-[grid-template-rows,opacity] duration-[var(--dur-3)] ease-[var(--curve-entrance)] ${
                       expanded === item.label
-                        ? 'grid-rows-[1fr] opacity-100'
-                        : 'grid-rows-[0fr] opacity-0'
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
                     }`}
                   >
                     <div className="overflow-hidden">
@@ -119,12 +119,17 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             <Button href="/contact" size="lg" className="w-full">
               Book a Consultation
             </Button>
-            <Button href="/about" variant="outline" size="lg" className="w-full">
+            <Button
+              href="/about"
+              variant="outline"
+              size="lg"
+              className="w-full"
+            >
               About Us
             </Button>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }

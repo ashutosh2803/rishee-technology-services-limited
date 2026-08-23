@@ -1,15 +1,18 @@
-import type { CSSProperties } from 'react'
-import { REVIEWS } from '../../data/reviews'
-import { SITE } from '../../data/site'
-import { LabelMono } from '../ui/LabelMono'
+import type { CSSProperties } from "react";
+import { REVIEWS } from "../../data/reviews";
+import { SITE } from "../../data/site";
+import { LabelMono } from "../ui/LabelMono";
 
 export function Reviews() {
   return (
-    <section className="py-[var(--section-default)] bg-[var(--surface-base)]" data-theme="light">
+    <section
+      className="py-[var(--section-default)] bg-[var(--surface-base)]"
+      data-theme="light"
+    >
       <div className="ac-container">
         <div
           className="ac-reveal grid gap-4 md:grid-cols-12 md:items-end"
-          style={{ '--i': 0 } as CSSProperties}
+          style={{ "--i": 0 } as CSSProperties}
         >
           <div className="md:col-span-7">
             <LabelMono>Client reviews</LabelMono>
@@ -25,14 +28,17 @@ export function Reviews() {
               className="ac-underline inline-flex items-center gap-2 text-[length:var(--fs-sm)] font-medium text-[var(--ink-1)]"
             >
               Read all 25 reviews on Google
-              <span aria-hidden className="font-[family-name:var(--font-jetbrains)] text-[var(--ink-3)]">
+              <span
+                aria-hidden
+                className="font-[family-name:var(--font-jetbrains)] text-[var(--ink-3)]"
+              >
                 →
               </span>
             </a>
           </div>
         </div>
 
-        <div className="ac-reveal mt-12" style={{ '--i': 0 } as CSSProperties}>
+        <div className="ac-reveal mt-12" style={{ "--i": 0 } as CSSProperties}>
           <div className="grid gap-px overflow-hidden rounded-[var(--r-sm)] border border-[var(--line)] bg-[var(--line)] md:grid-cols-3">
             {REVIEWS.map((review) => (
               <figure
@@ -55,8 +61,12 @@ export function Reviews() {
                   &ldquo;{review.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-6 flex items-baseline justify-between gap-4 border-t border-[var(--line-soft)] pt-4">
-                  <span className="font-medium text-[var(--ink-1)]">{review.author}</span>
-                  <span className="label-mono normal-case tracking-[0.08em]">Google review</span>
+                  <span className="font-medium text-[var(--ink-1)]">
+                    {review.author}
+                  </span>
+                  <span className="label-mono normal-case tracking-[0.08em]">
+                    Google review
+                  </span>
                 </figcaption>
               </figure>
             ))}
@@ -64,5 +74,5 @@ export function Reviews() {
         </div>
       </div>
     </section>
-  )
+  );
 }

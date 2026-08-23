@@ -1,32 +1,32 @@
-import { useEffect, useId, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { FileText, Search } from 'lucide-react'
-import { useSearch } from '../../context/SearchContext'
-import { sitePages } from '../../pages'
-import { searchPages } from '../../search/searchPages'
+import { useEffect, useId, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { FileText, Search } from "lucide-react";
+import { useSearch } from "../../context/SearchContext";
+import { sitePages } from "../../pages";
+import { searchPages } from "../../search/searchPages";
 
 export function SearchModal() {
-  const { isOpen, closeSearch } = useSearch()
-  const [query, setQuery] = useState('')
-  const inputRef = useRef<HTMLInputElement>(null)
-  const inputId = useId()
-  const results = searchPages(query, sitePages)
-  const hasQuery = query.trim().length > 0
+  const { isOpen, closeSearch } = useSearch();
+  const [query, setQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+  const inputId = useId();
+  const results = searchPages(query, sitePages);
+  const hasQuery = query.trim().length > 0;
 
   useEffect(() => {
     if (!isOpen) {
-      setQuery('')
-      return
+      setQuery("");
+      return;
     }
 
     const frame = window.requestAnimationFrame(() => {
-      inputRef.current?.focus()
-    })
+      inputRef.current?.focus();
+    });
 
-    return () => window.cancelAnimationFrame(frame)
-  }, [isOpen])
+    return () => window.cancelAnimationFrame(frame);
+  }, [isOpen]);
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-[min(12vh,7rem)] sm:px-6">
@@ -103,7 +103,7 @@ export function SearchModal() {
                           {result.title}
                         </span>
                         <span className="label-mono text-[var(--ink-3)]">
-                          {result.type === 'blog' ? 'Blog' : 'Page'}
+                          {result.type === "blog" ? "Blog" : "Page"}
                         </span>
                       </span>
                       <span className="mt-1 block text-[length:var(--fs-sm)] leading-[var(--lh-body)] text-[var(--ink-2)]">
@@ -118,5 +118,5 @@ export function SearchModal() {
         </div>
       </div>
     </div>
-  )
+  );
 }

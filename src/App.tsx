@@ -1,6 +1,6 @@
-import { Route, Routes } from 'react-router-dom'
-import { SiteLayout } from './components/layout/SiteLayout'
-import { sitePages } from './pages'
+import { Route, Routes } from "react-router-dom";
+import { SiteLayout } from "./components/layout/SiteLayout";
+import { sitePages } from "./pages";
 
 export function App() {
   return (
@@ -11,5 +11,5 @@ export function App() {
         ))}
       </Routes>
     </SiteLayout>
-  )
+  );
 }

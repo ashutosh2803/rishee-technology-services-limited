@@ -1,13 +1,13 @@
-import type { ReactNode } from 'react'
-import { SearchProvider } from '../../context/SearchContext'
-import { SearchModal } from '../search/SearchModal'
-import { Footer } from './Footer'
-import { GoogleReviewsBadge } from './GoogleReviewsBadge'
-import { Header } from './Header'
-import { SkipLink } from './SkipLink'
+import type { ReactNode } from "react";
+import { SearchProvider } from "../../context/SearchContext";
+import { SearchModal } from "../search/SearchModal";
+import { Footer } from "./Footer";
+import { GoogleReviewsBadge } from "./GoogleReviewsBadge";
+import { Header } from "./Header";
+import { SkipLink } from "./SkipLink";
 
 interface SiteLayoutProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export function SiteLayout({ children }: SiteLayoutProps) {
@@ -22,5 +22,5 @@ export function SiteLayout({ children }: SiteLayoutProps) {
       <GoogleReviewsBadge />
       <SearchModal />
     </SearchProvider>
-  )
+  );
 }

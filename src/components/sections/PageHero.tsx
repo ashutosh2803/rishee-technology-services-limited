@@ -1,10 +1,10 @@
-import type { CSSProperties } from 'react'
-import { LabelMono } from '../ui/LabelMono'
+import type { CSSProperties } from "react";
+import { LabelMono } from "../ui/LabelMono";
 
 interface PageHeroProps {
-  label: string
-  title: string
-  subtitle: string
+  label: string;
+  title: string;
+  subtitle: string;
 }
 
 export function PageHero({ label, title, subtitle }: PageHeroProps) {
@@ -13,7 +13,12 @@ export function PageHero({ label, title, subtitle }: PageHeroProps) {
       <div aria-hidden className="absolute inset-0 overflow-hidden">
         <svg className="absolute inset-0 h-full w-full">
           <defs>
-            <pattern id="page-hero-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+            <pattern
+              id="page-hero-grid"
+              width="44"
+              height="44"
+              patternUnits="userSpaceOnUse"
+            >
               <path
                 d="M 44 0 L 0 0 0 44"
                 fill="none"
@@ -29,7 +34,12 @@ export function PageHero({ label, title, subtitle }: PageHeroProps) {
           </defs>
           <rect width="100%" height="100%" fill="url(#page-hero-grid)" />
           <rect width="100%" height="100%" fill="url(#page-hero-glow)" />
-          <g stroke="rgba(110,168,220,0.35)" strokeWidth="1" fill="none" opacity="0.6">
+          <g
+            stroke="rgba(110,168,220,0.35)"
+            strokeWidth="1"
+            fill="none"
+            opacity="0.6"
+          >
             <line x1="18%" y1="22%" x2="42%" y2="38%" />
             <line x1="42%" y1="38%" x2="68%" y2="28%" />
             <line x1="68%" y1="28%" x2="88%" y2="52%" />
@@ -54,7 +64,10 @@ export function PageHero({ label, title, subtitle }: PageHeroProps) {
       />
 
       <div className="ac-container relative z-10 pt-[calc(var(--section-hero)+var(--header-h))] pb-[var(--section-default)] sm:pt-[calc(var(--section-hero)+var(--header-h)+var(--header-utility-h))]">
-        <div className="ac-enter max-w-[44rem]" style={{ '--i': 0 } as CSSProperties}>
+        <div
+          className="ac-enter max-w-[44rem]"
+          style={{ "--i": 0 } as CSSProperties}
+        >
           <LabelMono>{label}</LabelMono>
           <h1
             className="mt-6 text-[length:var(--fs-display)] leading-[var(--lh-display)] font-semibold tracking-[var(--tr-display)] text-[var(--ink-1)]"
@@ -68,5 +81,5 @@ export function PageHero({ label, title, subtitle }: PageHeroProps) {
         </div>
       </div>
     </section>
-  )
+  );
 }

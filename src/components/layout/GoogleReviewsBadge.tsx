@@ -1,4 +1,4 @@
-import { SITE } from '../../data/site'
+import { SITE } from "../../data/site";
 
 export function GoogleReviewsBadge() {
   return (
@@ -22,7 +22,10 @@ export function GoogleReviewsBadge() {
               <span className="font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-base)] font-medium text-[var(--ink-1)]">
                 5.0
               </span>
-              <span aria-hidden className="text-[0.7rem] tracking-[0.1em] text-[#FBBC04]">
+              <span
+                aria-hidden
+                className="text-[0.7rem] tracking-[0.1em] text-[#FBBC04]"
+              >
                 ★★★★★
               </span>
             </span>
@@ -33,7 +36,7 @@ export function GoogleReviewsBadge() {
         </a>
       </div>
     </aside>
-  )
+  );
 }
 
 function GoogleIcon() {
@@ -56,5 +59,5 @@ function GoogleIcon() {
         d="M12 4.76c1.76 0 3.34.6 4.59 1.8l3.44-3.44A11.98 11.98 0 0 0 1.29 6.63l3.98 3.09C6.22 6.87 8.87 4.76 12 4.76Z"
       />
     </svg>
-  )
+  );
 }

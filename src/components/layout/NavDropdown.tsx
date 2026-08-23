@@ -19,7 +19,9 @@ export function NavDropdown({
   if (!item.children) return null;
 
   const columnClass =
-    item.children.length > 6 ? "sm:grid-cols-2 xl:grid-cols-3" : "sm:grid-cols-2";
+    item.children.length > 6
+      ? "sm:grid-cols-2 xl:grid-cols-3"
+      : "sm:grid-cols-2";
 
   return (
     <div
