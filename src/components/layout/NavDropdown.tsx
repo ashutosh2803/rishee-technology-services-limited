@@ -1,7 +1,7 @@
 import type { NavItem } from "../../data/navigation";
 import { SITE } from "../../data/site";
 import { ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { IconBox } from "../ui/IconBox";
 
 interface NavDropdownProps {
   item: NavItem;
@@ -18,22 +18,31 @@ export function NavDropdown({
 }: NavDropdownProps) {
   if (!item.children) return null;
 
+  const columnClass =
+    item.children.length > 6 ? "sm:grid-cols-2 xl:grid-cols-3" : "sm:grid-cols-2";
+
   return (
     <div
       className="relative flex h-full items-center"
       onMouseEnter={onOpen}
       onMouseLeave={onClose}
     >
-      <Link
-        to={item.href}
-        className="flex items-center gap-1 py-8 font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-label)] font-medium uppercase tracking-[var(--tr-label)] text-[var(--ink-2)] transition-colors duration-[var(--dur-1)] hover:text-[var(--ink-1)]"
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+        className={`flex items-center gap-1 border-b-2 py-8 font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-label)] font-medium uppercase tracking-[var(--tr-label)] transition-colors duration-[var(--dur-1)] ${
+          isOpen
+            ? "border-[var(--accent)] text-[var(--ink-1)]"
+            : "border-transparent text-[var(--ink-2)] hover:text-[var(--ink-1)]"
+        }`}
       >
         {item.label}
         <ChevronDown
           className={`size-3 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
           aria-hidden
         />
-      </Link>
+      </button>
 
       <div
         className={`fixed inset-x-0 top-[var(--header-h)] z-30 overflow-hidden border-b border-[var(--line-strong)] border-t-2 border-t-[var(--accent)] bg-[color-mix(in_srgb,var(--surface-2)_86%,transparent)] backdrop-blur-[44px] backdrop-saturate-[1.8] backdrop-brightness-[0.55] shadow-[0_32px_64px_-24px_rgba(0,0,0,0.75)] transition-[opacity,transform] duration-[var(--dur-2)] ease-[var(--curve-entrance)] sm:top-[calc(var(--header-h)+var(--header-utility-h))] ${
@@ -52,10 +61,7 @@ export function NavDropdown({
                 {item.intro}
               </p>
             )}
-            <Link
-              to={item.href}
-              className="ac-underline mt-4 inline-flex w-fit items-center gap-2 text-[length:var(--fs-sm)] font-medium text-[var(--accent-hi)]"
-            >
+            <span className="ac-underline mt-4 inline-flex w-fit items-center gap-2 text-[length:var(--fs-sm)] font-medium text-[var(--accent-hi)]">
               View all
               <span
                 aria-hidden
@@ -63,7 +69,7 @@ export function NavDropdown({
               >
                 →
               </span>
-            </Link>
+            </span>
             <p
               aria-hidden
               className="mt-auto hidden pt-6 font-[family-name:var(--font-jetbrains)] text-[0.65rem] tracking-[0.12em] text-[var(--ink-3)] lg:block"
@@ -72,27 +78,28 @@ export function NavDropdown({
             </p>
           </div>
 
-          <ul className="grid content-start gap-px sm:grid-cols-2 lg:pl-8">
+          <ul className={`grid content-start gap-px lg:pl-8 ${columnClass}`}>
             {item.children.map((child, index) => (
-              <li key={child.href}>
-                <a
-                  href={child.href}
-                  className="group relative flex gap-3 rounded-[var(--r-xs)] p-3.5 transition-colors duration-[var(--dur-1)] hover:bg-[color-mix(in_srgb,var(--accent)_5%,var(--surface-3))]"
-                >
+              <li key={child.label}>
+                <div className="group flex gap-3 rounded-[var(--r-xs)] p-3.5">
+                  <IconBox icon={child.icon} size="sm" />
                   <span className="min-w-0 flex-1">
-                    <span className="flex items-baseline justify-between gap-3">
+                    <span className="flex items-start justify-between gap-3">
                       <span className="text-[length:var(--fs-sm)] font-medium text-[var(--ink-1)]">
                         {child.label}
                       </span>
                       <span
                         aria-hidden
-                        className="font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-label)] text-[var(--ink-3)] transition-colors group-hover:text-[var(--accent-hi)]"
+                        className="shrink-0 font-[family-name:var(--font-jetbrains)] text-[length:var(--fs-label)] text-[var(--ink-3)]"
                       >
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </span>
+                    <span className="mt-1 block text-[length:var(--fs-xs)] leading-[var(--lh-body)] text-[var(--ink-2)]">
+                      {child.description}
+                    </span>
                   </span>
-                </a>
+                </div>
               </li>
             ))}
           </ul>

@@ -99,14 +99,10 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                     <div className="overflow-hidden">
                       <ul className="mb-3 flex flex-col gap-0.5 border-l border-[var(--accent-line)] pl-5">
                         {item.children.map((child) => (
-                          <li key={child.href}>
-                            <Link
-                              to={child.href}
-                              onClick={onClose}
-                              className="block py-2 text-[length:var(--fs-sm)] font-medium text-[var(--ink-2)] transition-colors hover:text-[var(--accent-hi)]"
-                            >
+                          <li key={child.label}>
+                            <span className="block py-2 text-[length:var(--fs-sm)] font-medium text-[var(--ink-2)]">
                               {child.label}
-                            </Link>
+                            </span>
                           </li>
                         ))}
                       </ul>
