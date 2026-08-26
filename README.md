@@ -4,7 +4,7 @@
 
 <!-- Add your landing page screenshot to the repo and update the path below -->
 
-![Ark Cyber landing page](./docs/landing-page.png)
+![Ark Cyber landing page](./src/assets/landing-page-screenshot.png)
 
 ## Description
 
