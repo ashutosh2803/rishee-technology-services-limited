@@ -8,7 +8,7 @@
 
 ## Description
 
-A React + TypeScript recreation of the [Ark Cyber](https://arkcyber.net) website — an IT security and managed services company based in London, Ontario. The project includes the landing page, About page, and Contact page, built with Vite, Tailwind CSS, and React Router.
+The project includes the landing page, About page, and Contact page, built with Vite, Tailwind CSS, and React Router.
 
 ## Install & run locally
 
