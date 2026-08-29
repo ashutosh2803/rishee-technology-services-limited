@@ -52,7 +52,7 @@ export const AI_SECURITY_SERVICES: AiSecurityService[] = [
 export const AI_SECURITY_PARAGRAPHS = [
   "Shadow AI is the use of AI tools without IT’s knowledge or oversight—personal ChatGPT accounts, files uploaded for summaries, code pasted into assistants, or AI features built into platforms like Microsoft 365, Slack, Grammarly, and Canva.",
   "The issue isn’t AI itself; it’s the lack of visibility into who is using it and what data they’re sharing. Once customer records, contracts, financial information, or passwords are entered into an outside tool, you may lose control over how that data is stored or reused. Because this activity doesn’t look like a typical cyberattack, traditional security tools often miss it.",
-  "Ark Cyber helps businesses in London, Ontario and across Southwestern Ontario discover where AI is being used, understand what business data may be exposed, and put practical AI guardrails in place. Your team keeps the productivity gains of AI, and your sensitive information stays protected.",
+  "Rishee Technology Services Limited helps businesses in London, Ontario and across Southwestern Ontario discover where AI is being used, understand what business data may be exposed, and put practical AI guardrails in place. Your team keeps the productivity gains of AI, and your sensitive information stays protected.",
 ] as const;
 
 export const AI_GOVERNANCE_ITEMS: WhyChooseItem[] = [
@@ -94,4 +94,4 @@ export const AI_GOVERNANCE_ITEMS: WhyChooseItem[] = [
 ];
 
 export const AI_SECURITY_CTA_DESCRIPTION =
-  "Talk with Ark Cyber about Shadow AI monitoring and practical AI governance for your business. We will walk through where AI is already in use and which guardrails make sense for your team.";
+  "Talk with Rishee Technology Services Limited about Shadow AI monitoring and practical AI governance for your business. We will walk through where AI is already in use and which guardrails make sense for your team.";

@@ -1,6 +1,10 @@
 import { SITE } from "../../data/site";
 
 export function GoogleReviewsBadge() {
+  if (!SITE.googleReviewsUrl) {
+    return null;
+  }
+
   return (
     <aside
       aria-label="Google reviews rating"

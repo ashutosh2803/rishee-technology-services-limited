@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { SERVICE_CARDS } from "../../data/services";
+import { SITE } from "../../data/site";
 import { IconBox } from "../ui/IconBox";
 import { LabelMono } from "../ui/LabelMono";
 
@@ -15,7 +16,7 @@ export function ServicesOverview() {
           <div className="md:col-span-7">
             <LabelMono>Services overview</LabelMono>
             <h2 className="mt-4 text-[length:var(--fs-h2)] font-semibold tracking-[var(--tr-h2)] text-[var(--ink-1)]">
-              Ark Cyber Services Overview
+              {SITE.name} Services Overview
             </h2>
           </div>
         </div>

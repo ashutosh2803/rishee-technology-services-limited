@@ -22,7 +22,7 @@ export function HomePage() {
 export const pageEntry: PageEntry = {
   path: "/",
   meta: {
-    title: "Welcome to Ark Cyber",
+    title: "Welcome to Rishee Technology Services Limited",
     description:
       "IT services and cyber security in London, Ontario. We keep businesses across Canada and the USA protected, supported, and running without drama.",
     keywords: [
@@ -31,7 +31,7 @@ export const pageEntry: PageEntry = {
       "managed services",
       "cyber security",
       "london ontario",
-      "ark cyber",
+      "rishee technology services limited",
     ],
     type: "page",
   },

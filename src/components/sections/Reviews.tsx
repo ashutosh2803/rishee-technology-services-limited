@@ -20,22 +20,24 @@ export function Reviews() {
               What our clients say
             </h2>
           </div>
-          <div className="md:col-span-4 md:col-start-9 md:justify-self-end">
-            <a
-              href={SITE.googleReviewsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ac-underline inline-flex items-center gap-2 text-[length:var(--fs-sm)] font-medium text-[var(--ink-1)]"
-            >
-              Read all 25 reviews on Google
-              <span
-                aria-hidden
-                className="font-[family-name:var(--font-jetbrains)] text-[var(--ink-3)]"
+          {SITE.googleReviewsUrl ? (
+            <div className="md:col-span-4 md:col-start-9 md:justify-self-end">
+              <a
+                href={SITE.googleReviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ac-underline inline-flex items-center gap-2 text-[length:var(--fs-sm)] font-medium text-[var(--ink-1)]"
               >
-                →
-              </span>
-            </a>
-          </div>
+                Read all 25 reviews on Google
+                <span
+                  aria-hidden
+                  className="font-[family-name:var(--font-jetbrains)] text-[var(--ink-3)]"
+                >
+                  →
+                </span>
+              </a>
+            </div>
+          ) : null}
         </div>
 
         <div className="ac-reveal mt-12" style={{ "--i": 0 } as CSSProperties}>

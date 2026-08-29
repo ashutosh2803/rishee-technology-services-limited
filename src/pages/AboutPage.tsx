@@ -1,4 +1,5 @@
 import { ABOUT_CTA_DESCRIPTION } from "../data/about";
+import { SITE } from "../data/site";
 import { AboutContent } from "../components/sections/AboutContent";
 import { CtaSection } from "../components/sections/CtaSection";
 import { PageHero } from "../components/sections/PageHero";
@@ -9,8 +10,8 @@ export function AboutPage() {
   return (
     <div className="site-about">
       <PageHero
-        label="Ark Cyber"
-        title="About Ark Cyber"
+        label={SITE.name}
+        title={`About ${SITE.name}`}
         subtitle="Your IT Security & Support Systems Experts"
       />
       <AboutContent />
@@ -23,7 +24,7 @@ export function AboutPage() {
 export const pageEntry: PageEntry = {
   path: "/about",
   meta: {
-    title: "About Ark Cyber",
+    title: "About Rishee Technology Services Limited",
     description:
       "Your IT Security & Support Systems Experts. Trusted partner for cyber security solutions across Canada and the USA.",
     keywords: [

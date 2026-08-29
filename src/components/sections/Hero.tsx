@@ -80,16 +80,16 @@ export function Hero() {
               className="mt-6 text-[length:var(--fs-display)] leading-[var(--lh-display)] font-semibold tracking-[var(--tr-display)] text-[var(--ink-1)]"
               style={{ fontVariationSettings: "'wdth' var(--wdth-display)" }}
             >
-              Welcome to Ark Cyber
+              Welcome to {SITE.name}
               <span aria-hidden className="ac-cursor" />
             </h1>
           </div>
 
           <div className="ac-enter" style={{ "--i": 2 } as CSSProperties}>
             <p className="measure mt-6 text-[length:var(--fs-lg)] leading-[var(--lh-body)] text-[var(--ink-2)]">
-              Ark Cyber is an IT services and cyber security company in London,
-              Ontario. We keep businesses across Canada and the USA protected,
-              supported, and running without drama.
+              {SITE.name} is an IT services and cyber security company in
+              London, Ontario. We keep businesses across Canada and the USA
+              protected, supported, and running without drama.
             </p>
           </div>
 

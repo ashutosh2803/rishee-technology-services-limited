@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { ABOUT_PARAGRAPHS } from "../../data/about";
+import { SITE } from "../../data/site";
 
 export function AboutContent() {
   return (
@@ -14,7 +15,7 @@ export function AboutContent() {
         >
           <div className="md:col-span-4 lg:col-span-5">
             <h2 className="text-[length:var(--fs-h2)] font-semibold tracking-[var(--tr-h2)] text-[var(--ink-1)]">
-              About Ark Cyber
+              About {SITE.name}
             </h2>
           </div>
 

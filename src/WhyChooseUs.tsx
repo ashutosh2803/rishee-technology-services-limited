@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { WHY_CHOOSE_ITEMS, type WhyChooseItem } from "./data/about";
+import { SITE } from "./data/site";
 import { IconBox } from "./components/ui/IconBox";
 import { LabelMono } from "./components/ui/LabelMono";
 
@@ -24,7 +25,7 @@ interface WhyChooseUsProps {
 }
 
 export function WhyChooseUs({
-  title = "Why Choose Ark Cyber?",
+  title = `Why Choose ${SITE.name}?`,
   items = WHY_CHOOSE_ITEMS,
   cta,
 }: WhyChooseUsProps) {

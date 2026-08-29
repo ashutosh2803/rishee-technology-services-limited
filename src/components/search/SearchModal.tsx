@@ -4,6 +4,7 @@ import { FileText, Search } from "lucide-react";
 import { useSearch } from "../../context/SearchContext";
 import { sitePages } from "../../pages";
 import { searchPages } from "../../search/searchPages";
+import { SITE } from "../../data/site";
 
 export function SearchModal() {
   const { isOpen, closeSearch } = useSearch();
@@ -73,7 +74,7 @@ export function SearchModal() {
                 Search this site
               </p>
               <p className="mt-2 max-w-[20rem] text-[length:var(--fs-sm)] leading-[var(--lh-body)] text-[var(--ink-2)]">
-                Find pages and blog posts by Ark. Start typing above.
+                Find pages and blog posts by {SITE.name}. Start typing above.
               </p>
             </div>
           ) : results.length === 0 ? (

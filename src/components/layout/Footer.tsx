@@ -30,15 +30,10 @@ export function Footer() {
 
       <div className="ac-container relative grid gap-12 pt-16 pb-10 lg:grid-cols-12 lg:gap-10">
         <div className="flex flex-col md:col-span-6 lg:col-span-4">
-          <Link className="flex items-start" to="/">
-            <img
-              alt={SITE.name}
-              src={SITE.logo}
-              width={909}
-              height={150}
-              loading="lazy"
-              className="h-auto w-full max-w-[190px]"
-            />
+          <Link className="flex max-w-[16rem] items-start" to="/">
+            <span className="text-[length:var(--fs-lg)] leading-snug font-semibold tracking-tight text-[var(--ink-1)]">
+              {SITE.name}
+            </span>
           </Link>
           <p className="mt-6 max-w-xs text-[length:var(--fs-base)] leading-[var(--lh-body)] text-[var(--ink-2)]">
             IT security and support systems for businesses across Canada and the
@@ -109,18 +104,17 @@ export function Footer() {
         className="pointer-events-none relative -mt-6 -mb-3 overflow-hidden select-none"
       >
         <p
-          className="ac-container text-[clamp(3.5rem,10vw,8rem)] leading-[0.82] font-bold tracking-[-0.04em] whitespace-nowrap text-[var(--ghost-ink)]"
+          className="ac-container text-[clamp(1.75rem,6vw,4.5rem)] leading-[0.9] font-bold tracking-[-0.04em] text-[var(--ghost-ink)]"
           style={{ fontVariationSettings: "'wdth' 92" }}
         >
-          ARK CYBER
+          {SITE.name.toUpperCase()}
         </p>
       </div>
 
       <div className="relative border-t border-[var(--line-soft)]">
         <div className="ac-container flex flex-col items-center justify-between gap-3 py-6 text-center text-xs text-[var(--ink-3)] sm:flex-row sm:text-left">
           <span>
-            © {year} Ark Cyber IT Security &amp; Service Systems. All rights
-            reserved.
+            © {year} {SITE.name}. All rights reserved.
           </span>
           <span>
             Built by{" "}

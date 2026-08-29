@@ -68,12 +68,12 @@ export function ContactSection() {
       <div className="ac-container relative z-10 grid gap-12 py-[calc(var(--section-default)+var(--header-h))] pb-[var(--section-default)] sm:py-[calc(var(--section-default)+var(--header-h)+var(--header-utility-h))] lg:grid-cols-12 lg:items-start lg:gap-16">
         <div className="lg:col-span-5">
           <div className="ac-enter" style={{ "--i": 0 } as CSSProperties}>
-            <LabelMono>Ark Cyber</LabelMono>
+            <LabelMono>{SITE.name}</LabelMono>
             <h1
               className="mt-6 text-[length:var(--fs-display)] leading-[var(--lh-display)] font-semibold tracking-[var(--tr-display)] text-[var(--ink-1)]"
               style={{ fontVariationSettings: "'wdth' var(--wdth-display)" }}
             >
-              Contact Ark Cyber
+              Contact {SITE.name}
             </h1>
             <p className="mt-5 text-[length:var(--fs-lg)] leading-[var(--lh-body)] text-[var(--ink-2)]">
               For enquiries or to book a no-obligation consultation

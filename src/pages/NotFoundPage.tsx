@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { Button } from "../components/ui/Button";
 import { LabelMono } from "../components/ui/LabelMono";
+import { SITE } from "../data/site";
 
 export function NotFoundPage() {
   useEffect(() => {
-    document.title = "Page Not Found | Ark Cyber";
+    document.title = `Page Not Found | ${SITE.name}`;
   }, []);
 
   return (

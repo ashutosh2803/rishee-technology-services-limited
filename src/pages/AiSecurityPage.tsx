@@ -7,20 +7,21 @@ import {
   AI_GOVERNANCE_ITEMS,
   AI_SECURITY_CTA_DESCRIPTION,
 } from "../data/aiSecurity";
+import { SITE } from "../data/site";
 import type { PageEntry } from "../types/page";
 
 export function AiSecurityPage() {
   return (
     <div className="site-ai-security">
       <PageHero
-        label="Ark Cyber"
+        label={SITE.name}
         title="Shadow AI & AI Governance Services"
         subtitle="Visibility, monitoring, and managed guardrails for safe AI adoption"
       />
       <AiSecurityContent />
       <AiSecurityServices />
       <WhyChooseUs
-        title="Why Choose Ark Cyber for AI Governance?"
+        title={`Why Choose ${SITE.name} for AI Governance?`}
         items={AI_GOVERNANCE_ITEMS}
         cta={{ href: "/contact", title: "Ready to get started?" }}
       />

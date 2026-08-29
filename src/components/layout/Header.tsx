@@ -40,14 +40,14 @@ export function Header() {
         </div>
 
         <div className="ac-container flex h-[var(--header-h)] items-center justify-between gap-6">
-          <Link className="shrink-0" aria-label="Ark Cyber — home" to="/">
-            <img
-              alt={SITE.name}
-              src={SITE.logo}
-              width={909}
-              height={150}
-              className="h-auto w-full max-w-[132px] transition-[max-width] duration-[var(--dur-3)] sm:max-w-[170px]"
-            />
+          <Link
+            className="shrink-0 max-w-[11.5rem] sm:max-w-[16rem]"
+            aria-label={`${SITE.name} — home`}
+            to="/"
+          >
+            <span className="block text-[length:var(--fs-sm)] leading-snug font-semibold tracking-tight text-[var(--ink-1)] sm:text-[length:var(--fs-base)]">
+              {SITE.name}
+            </span>
           </Link>
 
           <nav

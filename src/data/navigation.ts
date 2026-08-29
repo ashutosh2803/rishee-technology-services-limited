@@ -203,7 +203,7 @@ export const NAV_ITEMS: NavItem[] = [
     label: "Projects",
     href: "/projects-procurement",
     intro:
-      "Ark Cyber is your one stop shop for projects, services & hardware/software",
+      "Rishee Technology Services Limited is your one stop shop for projects, services & hardware/software",
     children: [
       {
         label: "Hardware Procurement",

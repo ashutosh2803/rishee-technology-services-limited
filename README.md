@@ -1,10 +1,10 @@
-# Ark Cyber
+# Rishee Technology Services Limited
 
 ## Screenshot
 
 <!-- Add your landing page screenshot to the repo and update the path below -->
 
-![Ark Cyber landing page](./src/assets/landing-page-screenshot.png)
+![Rishee Technology Services Limited landing page](./src/assets/landing-page-screenshot.png)
 
 ## Description
 
