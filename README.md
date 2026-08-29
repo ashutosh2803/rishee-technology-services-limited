@@ -20,8 +20,8 @@ The project includes the landing page, About page, and Contact page, built with 
 ### Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ark-cyber.git
-cd ark-cyber
+git clone https://github.com/ashutosh2803/rishee-technology-services-limited.git
+cd rishee-technology-services-limited
 npm install
 ```
 
