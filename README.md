@@ -4,7 +4,8 @@
 
 <!-- Add your landing page screenshot to the repo and update the path below -->
 
-![Rishee Technology Services Limited landing page](./src/assets/landing-page-screenshot.png)
+![Rishee Technology Services Limited landing page](<img width="1902" height="913" alt="image" src="https://github.com/user-attachments/assets/ed28c941-f4e2-4dfc-ad2a-eb9eadb04b10" />
+)
 
 ## Description
 
